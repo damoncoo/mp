@@ -22,5 +22,9 @@
   "license": "MIT",
   "dependencies": {
     "fs-extra": "^0.26.7"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/zhouzhongyuan/mp/issues"
+  },
+  "homepage": "https://github.com/zhouzhongyuan/mp#readme"
 }
