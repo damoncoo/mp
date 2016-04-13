@@ -1,0 +1,26 @@
+{
+  "name": "mobileprovision",
+  "version": "0.0.1",
+  "description": "import mobileprovision file to your mac os",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "devDependencies": {
+    "tape": "*"
+  },
+  "keywords": [
+    "mobileprovision",
+    "mobile",
+    "provision"
+  ],
+  "repository": {
+    "url": "https://github.com/zhouzhongyuan/mp.git",
+    "type": "git"
+  },
+  "author": "Zhongyuan",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^0.26.7"
+  }
+}
