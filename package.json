@@ -15,7 +15,7 @@
     "provision"
   ],
   "repository": {
-    "url": "https://github.com/zhouzhongyuan/mp.git",
+    "url": "git@ggithub.com/zhouzhongyuan/mp.git",
     "type": "git"
   },
   "author": "Zhongyuan",
