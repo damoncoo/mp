@@ -1,6 +1,6 @@
 {
   "name": "mobileprovision",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "import mobileprovision file to your mac os",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,8 @@
   "author": "Zhongyuan",
   "license": "MIT",
   "dependencies": {
-    "fs-extra": "^0.26.7"
+    "fs-extra": "^0.26.7",
+    "plist": "^2.1.0"
   },
   "bugs": {
     "url": "https://github.com/zhouzhongyuan/mp/issues"

@@ -1,5 +1,5 @@
 var mp = require('./../index.js');
-mp('ceotest1.mobileprovision')
+mp('./ceotest.mobileprovision')
     .then(function (value) {
         console.log(value);
     })

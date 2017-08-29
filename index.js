@@ -1,21 +1,56 @@
-'use strict';
-var fs = require('fs-extra');
-module.exports = mp;
-function mp(input){
+const fs = require('fs-extra');
+const plist = require('plist');
+
+function mp(input) {
     return new Promise(function (resolve, reject) {
-        fs.readFile(input,{encoding:'utf8',flag:'r'}, (err,data) => {
-            if(err) reject(err);
-            var reg = new RegExp("<key>UUID<\/key>[\\s]*<string>(.*)<\/string>");
-            var uuid = data.match(reg)[1];
+        fs.readFile(input, {encoding: 'utf8', flag: 'r'}, (err, data) => {
+            if (err) {
+                reject({
+                    success: false,
+                    message: `Read file ${input} error. \nDetail: ${err}`,
+                });
+                return;
+            }
+            let mpObj;
+            try {
+                mpObj = plist.parse(data);
+
+            } catch (e) {
+                reject(
+                    {
+                        success: false,
+                        message: `Parse plist error. \n Detail: ${e}`,
+                    });
+                return;
+            }
+
+            const UUID = mpObj.UUID;
+            const TeamIdentifier = mpObj.TeamIdentifier[0];
+            const ExpirationDate = mpObj.ExpirationDate;
+            const TeamName = mpObj.TeamName;
+
             var reg = new RegExp("(\/Users\/.*?\/).*");
             var root = __dirname.match(reg)[1];
-            var output=`${root}Library/MobileDevice/Provisioning\ Profiles/${uuid}.mobileprovision`;
-            fs.copy(input, output, (err) => {
-                if (err) return reject(err);
-                resolve(`${uuid}.mobileprovision add success`);
+            var output = `${root}Library/MobileDevice/Provisioning\ Profiles/${UUID}.mobileprovision`;
+
+            fs.copy(input, output, (error) => {
+                if (error) {
+                    return reject({
+                        success: false,
+                        message: `Copy from ${input} to ${output} error. \nDetail: ${error}`,
+                    })
+                }
+                ;
+                resolve({
+                    success: true,
+                    message: `${UUID}.mobileprovision add success`,
+                    UUID,
+                    TeamIdentifier,
+                    ExpirationDate,
+                    TeamName,
+                });
             });
         });
     });
 };
-
-
+module.exports = mp;
