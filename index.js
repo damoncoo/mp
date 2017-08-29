@@ -29,9 +29,9 @@ function mp(input) {
             const ExpirationDate = mpObj.ExpirationDate;
             const TeamName = mpObj.TeamName;
 
-            var reg = new RegExp("(\/Users\/.*?\/).*");
-            var root = __dirname.match(reg)[1];
-            var output = `${root}Library/MobileDevice/Provisioning\ Profiles/${UUID}.mobileprovision`;
+            const reg = new RegExp("(\/Users\/.*?\/).*");
+            const root = __dirname.match(reg)[1];
+            const output = `${root}Library/MobileDevice/Provisioning\ Profiles/${UUID}.mobileprovision`;
 
             fs.copy(input, output, (error) => {
                 if (error) {
@@ -48,6 +48,7 @@ function mp(input) {
                     TeamIdentifier,
                     ExpirationDate,
                     TeamName,
+                    installLocation: output,
                 });
             });
         });

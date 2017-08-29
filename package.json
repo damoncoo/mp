@@ -1,6 +1,6 @@
 {
   "name": "mobileprovision",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "import mobileprovision file to your mac os",
   "main": "index.js",
   "scripts": {
