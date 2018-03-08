@@ -48,6 +48,7 @@ function mp(input) {
                     TeamIdentifier,
                     ExpirationDate,
                     TeamName,
+                    data:mpObj,
                     installLocation: output,
                 });
             });
