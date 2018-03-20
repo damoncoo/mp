@@ -39,8 +39,7 @@ function mp(input) {
                         success: false,
                         message: `Copy from ${input} to ${output} error. \nDetail: ${error}`,
                     })
-                }
-                ;
+                };
                 resolve({
                     success: true,
                     message: `${UUID}.mobileprovision add success`,

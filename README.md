@@ -42,3 +42,16 @@ mp('PATH-TO-YOUT-MOBILEPROVISION-FILE')
 }
 
 ```
+
+## cli
+
+```bash
+mp install $FILE-PATH
+
+```
+The above command will print the UUID, which will be used in below command.
+
+
+```bash
+mp remove $UUID
+```

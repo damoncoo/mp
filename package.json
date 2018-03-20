@@ -1,6 +1,6 @@
 {
   "name": "mobileprovision",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "import mobileprovision file to your mac os",
   "main": "index.js",
   "scripts": {
@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/zhouzhongyuan/mp/issues"
   },
-  "homepage": "https://github.com/zhouzhongyuan/mp#readme"
+  "homepage": "https://github.com/zhouzhongyuan/mp#readme",
+  "bin":{
+    "mp": "cli/index.js"
+  }
 }
