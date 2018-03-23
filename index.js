@@ -30,7 +30,7 @@ function mp(input) {
             const TeamName = mpObj.TeamName;
 
             const reg = new RegExp("(\/Users\/.*?\/).*");
-            const root = __dirname.match(reg)[1];
+            const root = process.cwd().match(reg)[1];
             const output = `${root}Library/MobileDevice/Provisioning\ Profiles/${UUID}.mobileprovision`;
 
             fs.copy(input, output, (error) => {
