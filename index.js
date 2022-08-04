@@ -30,7 +30,7 @@ function mp(input) {
             const TeamName = mpObj.TeamName;
 
             const root = process.env.HOME;
-            const output = `${root}Library/MobileDevice/Provisioning\ Profiles/${UUID}.mobileprovision`;
+            const output = `${root}/Library/MobileDevice/Provisioning\ Profiles/${UUID}.mobileprovision`;
 
             fs.copy(input, output, (error) => {
                 if (error) {
