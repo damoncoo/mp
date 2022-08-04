@@ -29,8 +29,7 @@ function mp(input) {
             const ExpirationDate = mpObj.ExpirationDate;
             const TeamName = mpObj.TeamName;
 
-            const reg = new RegExp("(\/Users\/.*?\/).*");
-            const root = process.cwd().match(reg)[1];
+            const root = process.env.HOME;
             const output = `${root}Library/MobileDevice/Provisioning\ Profiles/${UUID}.mobileprovision`;
 
             fs.copy(input, output, (error) => {
