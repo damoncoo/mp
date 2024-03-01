@@ -21,7 +21,7 @@
   "author": "Zhongyuan",
   "license": "MIT",
   "dependencies": {
-    "fs-extra": "^0.26.7",
+    "fs-extra": "^0.30.0",
     "plist": "^2.1.0"
   },
   "bugs": {
